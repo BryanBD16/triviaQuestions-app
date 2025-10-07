@@ -14,7 +14,32 @@
             <!--Centrealise header added by js-->
         </header>
         <main>
-            <h1>Trivia Quiz</h1>
+            <h1>Start by choosing a category</h1>
+            <br>
+            <div class="row">
+                <div class="col-lg-6" style="margin: auto;">
+                    <form id="formCategories" action="submit">
+                        <select name="Categories" id="Categories">
+                            <!-- Ajouté dynamiquement par js -->
+                        </select>
+                        <br> <br>
+                        <button id="btnStartQuiz" type="submit" class="btn btn-success">
+                            <i class="bi bi-play-fill"></i> Start Quiz
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" style="margin: auto;">
+                    <form id="formQuestions" action="submit">
+                        
+                        <br> <br>
+                        <button id="btnSubmitAnswers" type="submit" class="btn btn-success">
+                            <i class="bi bi-play-fill"></i> Submit Answers
+                        </button>
+                    </form>
+                </div>
+            </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
