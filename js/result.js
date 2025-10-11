@@ -60,7 +60,7 @@ async function displayResults() {
     cardBody.classList.add("card-body");
 
     const categoryTitle = document.createElement("h4");
-    categoryTitle.classList.add("card-title", "mb-3");
+    categoryTitle.classList.add("card-title", "mb-3", "text-success");
     categoryTitle.textContent = categoryName;
     cardBody.appendChild(categoryTitle);
 

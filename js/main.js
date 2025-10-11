@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   });
 });
+
+// AJoute le footer centralisé
+document.addEventListener("DOMContentLoaded", async () => {
+  const footerContainer = document.getElementById("footer");
+  footerContainer.classList.add("bg-success", "text-white", "py-3", "mt-5")
+  const resp = await fetch("footer.html");
+  footerContainer.innerHTML = await resp.text();
+});

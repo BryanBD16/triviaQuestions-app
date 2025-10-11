@@ -13,18 +13,59 @@
         <header id="header">
             <!--Centrealise header added by js-->
         </header>
-        <main>
-            <h1>Trivia Quiz</h1>
-            <br>
-            <div class="row">
-                <div class="col-lg-6" style="margin: auto;">
-                <p>Welcome to the trivia quiz app. In this app, you will be presented with a series of questions and answers to test your knowledge. 
-                You can choose from a range of categories and the app will keep track of your score. The questions and answers are provided by the Open Trivia Database API.</p>
-                </div>
-            </div>
-            
+        <main class="container my-5">
 
+            <section class="text-center mb-5">
+                <h1 class="fw-bold text-success mb-3">Trivia Quiz App</h1>
+                <p class="lead">Test your knowledge across multiple categories with questions powered by the <a href="https://opentdb.com/" target="_blank" class="text-decoration-none fw-semibold">Open Trivia Database API</a>.</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="h4 text-success mb-3">How It Works</h2>
+                <p>
+                Choose a trivia category, answer a set of questions, and see your score at the end.  
+                Your recent scores are automatically saved in your browser and can be viewed anytime on the “Result” page.
+                </p>
+                <ul>
+                <li>Select a category to begin your quiz.</li>
+                <li>Answer multiple-choice questions from that category.</li>
+                <li>Review your past results to track your progress.</li>
+                </ul>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="h4 text-success mb-3">About the Open Trivia Database</h2>
+                <p>
+                The <a href="https://opentdb.com/" target="_blank" class="text-decoration-none fw-semibold">Open Trivia Database</a> provides an open, community-driven collection of trivia questions.  
+                You can even <a href="https://opentdb.com/login.php" target="_blank" class="text-decoration-none">contribute your own questions</a> to help expand the database for everyone.
+                </p>
+                <p>
+                Each category includes a variety of questions of different difficulties and topics, ensuring a fresh and challenging experience every time.
+                </p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="h4 text-success mb-3">Technologies Used</h2>
+                <ul>
+                <li><strong>Bootstrap 5</strong> — for responsive layout and modern UI styling.  
+                    <a href="https://getbootstrap.com/" target="_blank" class="text-decoration-none">Learn more</a></li>
+                <li><strong>Open Trivia DB API</strong> — for fetching real trivia questions and categories.  
+                    <a href="https://opentdb.com/api_config.php" target="_blank" class="text-decoration-none">API documentation</a></li>
+                <li><strong>JavaScript</strong> — for interactive logic and score tracking using session storage.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="h4 text-success mb-3">Categories Available</h2>
+                <p>
+                The app offers multiple trivia categories including General Knowledge, Science, History, Sports, and more.  
+                The exact list of categories and question counts are dynamically fetched from the Open Trivia Database.
+                </p>
+            </section>
         </main>
+        <footer id="footer">
+            <!--Centrealise footer added by js-->
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
     </body>
