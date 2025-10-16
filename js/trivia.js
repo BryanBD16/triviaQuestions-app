@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btnStartQuiz = document.getElementById("btnStartQuiz");
   const btnSubmitAnswers = document.getElementById("btnSubmitAnswers");
+  const difficultySelect = document.getElementById("Difficulties");
 
   // État initial : start visible, submit caché
   btnStartQuiz.classList.remove("d-none");
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const url = `https://opentdb.com/api.php?amount=5&category=${categoryId}&difficulty=medium&type=multiple`;
+    const url = `https://opentdb.com/api.php?amount=5&category=${categoryId}${(+difficultySelect.value)? "&difficulty="+difficultySelect.options[difficultySelect.value].text.toLowerCase():""}&type=multiple`;
 
     try {
       const response = await fetch(url);
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         questionDiv.classList.add("mb-4", "p-3", "border", "rounded");
 
         const qTitle = document.createElement("h5");
-        qTitle.innerHTML = `${index + 1}. ${question.question}`;
+        qTitle.innerHTML = `${index + 1}. ${decodeHtml(question.question)}`;
         questionDiv.appendChild(qTitle);
 
         // Mélanger les réponses
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const label = document.createElement("label");
           label.classList.add("form-check-label");
-          label.textContent = answer;
+          label.textContent = decodeHtml(answer);
 
           div.appendChild(input);
           div.appendChild(label);
@@ -143,6 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const select = document.getElementById("Categories");
     const categoryId = select.value;
     // On stocke le score dans la session
-    sessionStorage.setItem(`${categoryId}:${Date.now()}`, score);
+    sessionStorage.setItem(`${categoryId}:${Date.now()}:${difficultySelect.options[difficultySelect.value].text}`, score);
   });
 });
+
+function decodeHtml(html) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}

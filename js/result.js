@@ -17,13 +17,14 @@ async function displayResults() {
     const value = sessionStorage.getItem(key);
 
     if (key && key.includes(":")) {
-      const [categoryId, timestamp] = key.split(":");
+      const [categoryId, timestamp, difficulty] = key.split(":");
       if (!resultsByCategory[categoryId]) {
         resultsByCategory[categoryId] = [];
       }
       resultsByCategory[categoryId].push({
         score: value,
-        timestamp: parseInt(timestamp, 10)
+        timestamp: parseInt(timestamp, 10),
+        difficulty : difficulty
       });
     }
   }
@@ -76,7 +77,7 @@ async function displayResults() {
         month: "long",
         day: "numeric"
     });
-    li.innerHTML = `<strong>${formattedDate}</strong><br>Score: ${r.score}`;
+    li.innerHTML = `Difficulty: <strong>${r.difficulty}</strong><br>Date: <strong>${formattedDate}</strong><br>Score: ${r.score}`;
     li.classList.add("mb-2", "p-2", "rounded-3");
     ul.appendChild(li);
     });
